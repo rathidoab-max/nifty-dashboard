@@ -68,7 +68,7 @@ instruments = kite.instruments("NFO")
 df = pd.DataFrame(instruments)
 df = df[(df['segment'] == 'NFO-OPT') & (df['tradingsymbol'].str.startswith('NIFTY')) & (df['expiry'].notnull())]
 
-# ---- Logger (if enabled) ----
+# ---- Logger (activated only if toggle ON) ----
 if enable_logger:
     now = datetime.datetime.now()
     today = now.strftime("%Y-%m-%d")
@@ -106,5 +106,5 @@ if enable_logger:
         else:
             log_df.to_csv(log_path, index=False)
 
-# [Place the rest of your original Streamlit dashboard tabs code below here as-is...]
+# [Place rest of your existing Streamlit tab structure and UI rendering below here...]
 
